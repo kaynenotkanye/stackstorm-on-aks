@@ -10,12 +10,12 @@ jobs:
         with:
           path: main
       - name: Provision AKS
-        run: cd main && ./provision-aks.sh
+        run: cd main && ./1-provision-aks.sh
       - name: Post Provision
-        run: cd main && ./post-provision.sh
+        run: cd main && ./2-post-provision.sh
       - name: Deploy with Helm
-        run: cd main && ./helm-deploy.sh
+        run: cd main && ./3-helm-deploy.sh
       - name: Integration Tests
-        run: cd main && ./helm-test.sh
+        run: cd main && ./4-helm-test.sh
       - name: Validate Tests with st2client
-        run: cd main && ./st2client-validate.sh
+        run: cd main && ./5-st2client-validate.sh
